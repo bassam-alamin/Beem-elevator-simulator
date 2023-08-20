@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     IS_TEST: bool = False
     ENVIRONMENT: str = "dev"
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = ["http://127.0.0.1"]
-    API_PREFIX: str = "/api/v0"
+    API_PREFIX: str = "/api/v1"
 
     @validator("BACKEND_CORS_ORIGINS", pre=True)
     def assemble_cors_origins(cls, v: Union[str, List[str]]) -> Union[List[str], str]:
@@ -23,6 +23,7 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     settings = Settings()
     print(f"Loading settings for: {settings.ENVIRONMENT}")
+
     return settings
 
 
