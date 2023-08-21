@@ -1,6 +1,6 @@
 ### Version: 1.0.0
 
-# Beem Elevator backend
+# Beem Elevator backend (Fast API)
 Beem Elevator backend
 
 ## How To Run:  
