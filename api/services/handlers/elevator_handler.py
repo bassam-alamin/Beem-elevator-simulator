@@ -1,9 +1,5 @@
 import datetime
-
-from starlette import status
 from starlette.exceptions import HTTPException
-from starlette.responses import JSONResponse
-
 from api.domain.elevator import elevators, ElevatorDirection, ElevatorStates
 from api.persistence.repository.repository import elevator_log_repository, query_logger_repository
 
