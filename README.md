@@ -50,6 +50,8 @@ On Your browser enter [127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
    ![image](https://github.com/bassam-alamin/Beem-elevator-simulator/assets/31857273/06b18cdf-345b-4fc0-bd25-0e011086379e)
    
    Query Logger Table
+
+   ![Screenshot from 2023-08-21 10-28-49](https://github.com/bassam-alamin/Beem-elevator-simulator/assets/31857273/c03fd4a8-d77a-4d75-ad24-4316128a42bc)
+
    
-   ![Screenshot from 2023-08-21 10-28-49.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202023-08-21%2010-28-49.png)
 
