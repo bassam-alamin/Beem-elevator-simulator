@@ -54,13 +54,13 @@ class Elevator:
         print(f"Elevator: {self.elevator_id} Door Opening")
         self.state = ElevatorStates.DOOR_OPEN
         time.sleep(2)
-        return
+        return True
 
     def close_door(self):
         print(f"Elevator: {self.elevator_id} Door Closing")
         self.state = ElevatorStates.DOOR_CLOSED
         time.sleep(2)
-        return
+        return True
 
     def move_to_next_floor(self):
         if self.stop_floor_list:
