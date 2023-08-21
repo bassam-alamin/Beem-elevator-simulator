@@ -12,6 +12,7 @@ class ElevatorLogs(Base):
     id = Column(Integer, primary_key=True)
     elevator_id = Column(Integer, nullable=False)
     event = Column(Text, nullable=True)
+    description = Column(Text, nullable=True)
     timestamp = Column(DateTime, nullable=True)
     created_at = Column(
         DateTime,

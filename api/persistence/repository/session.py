@@ -21,12 +21,24 @@ def get_session() -> Session:
         session.close()
 
 
+captured_logs = []
+
+
 def set_sqlite_engine():
     print(f"Creating sqlite engine with URI: {s.settings.SQLITE_URI}")
 
     engine = create_engine(
         s.settings.SQLITE_URI, connect_args={"check_same_thread": False}
     )
+
+    # Add event listener for tracking queries
+    @event.listens_for(engine, "before_cursor_execute")
+    def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
+        # Log the query and its parameters
+        query_info = f"Query: {statement}, Parameters: {parameters}"
+        # Log or save query_info into your event log database
+        captured_logs.insert(0, query_info)
+
     event.listen(engine, "connect", lambda c, _: c.execute("pragma foreign_keys=ON;"))
     return engine
 
