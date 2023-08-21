@@ -1,5 +1,6 @@
 import time
 from enum import Enum
+from decouple import config
 
 elevators = {}
 
@@ -28,8 +29,8 @@ class ElevatorDirection(str, Enum):
 
 class Building:
     def __init__(self):
-        self.floors = 7
-        self.number_of_elevators = 2
+        self.floors = int(config("BUILDING_FLOORS"))
+        self.number_of_elevators = int(config("NUMBER_OF_ELEVATORS"))
 
     def configure_elevators(self):
         for i in range(self.number_of_elevators):
@@ -96,4 +97,3 @@ def move_elevators(elevator):
     print(f"Elevator {elevator.elevator_id} Starting to move")
     elevator.move_to_next_floor()
     return
-
